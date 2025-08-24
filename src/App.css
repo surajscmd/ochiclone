@@ -122,3 +122,8 @@
   top: -7rem;
 
 }
+@media (max-width: 468px) {
+  .topminsmobile{
+        top: -15rem;
+  }
+}

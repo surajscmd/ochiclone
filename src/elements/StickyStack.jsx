@@ -6,7 +6,7 @@ import Ready from "../components/Ready";
 const StickyStack = () => {
   return (
     <section className="sticky-stack">
-      <div className="sticky-item">
+      <div className="sticky-item topminsmobile">
         <Cards />
       </div>
       <div className="sticky-item topminus">
