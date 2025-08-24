@@ -35,16 +35,32 @@ const Eyesection = () => {
   if (isMobile) {
     return (
       <div className="eye-section">
-        <img className="eye-img" src={eye} alt="Eye illustration" />
-        <motion.div
-          className="eye-overlay"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <p className="overlay-text">Next {">"}</p>
-        </motion.div>
-      </div>
+      <img className="eye-img" src={eye} alt="Eye illustration" />
+
+      {/* Overlay with animation */}
+      <motion.div
+        className="eye-overlay"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="overlay-text">
+          {/* Left Eye */}
+          <motion.div
+            className="neweye"
+            animate={{ x: [-10, 10, -10] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <div className="divider">|</div>
+          {/* Right Eye */}
+          <motion.div
+            className="neweye"
+            animate={{ x: [-10, 10, -10] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </motion.div>
+    </div>
     );
   }
 

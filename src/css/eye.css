@@ -36,6 +36,16 @@
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
   border-radius: 50px;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.neweye{
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+
 }
 .eye-continer {
   position: absolute;
