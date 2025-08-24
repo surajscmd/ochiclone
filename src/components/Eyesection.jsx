@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import eye from "../assets/eye.jpg";
 import "../css/eye.css";
+import { motion } from "motion/react";
+
 const Eyesection = () => {
   const [rotate, setRotate] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
-      // Distance from center of screen
       const deltaX = mouseX - window.innerWidth / 2;
       const deltaY = mouseY - window.innerHeight / 2;
-      // Calculate angle (in degrees)
       const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
       setRotate(angle - 180);
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
-  const [isMobile, setIsMobile] = useState(false);
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
+
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isMobile]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -27,11 +31,27 @@ const Eyesection = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  if (isMobile) return null; // don’t render on mobile
+  // ✅ If mobile → show only image
+  if (isMobile) {
+    return (
+      <div className="eye-section">
+        <img className="eye-img" src={eye} alt="Eye illustration" />
+        <motion.div
+          className="eye-overlay"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <p className="overlay-text">Next {">"}</p>
+        </motion.div>
+      </div>
+    );
+  }
 
+  // ✅ Desktop → full animation
   return (
     <div className="eye-section">
-      <div data-scroll  data-scroll-speed={window.innerWidth > 768 ? "-0.8" : null} className="eye-wrapper">
+      <div data-scroll data-scroll-speed="-0.8" className="eye-wrapper">
         <img className="eye-img" src={eye} alt="Eye illustration" />
         <div className="eye-continer">
           <div data-scroll data-scroll-speed="0.1" className="eye">

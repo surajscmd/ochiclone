@@ -4,73 +4,93 @@
   align-items: center;
   overflow: hidden;
   background: #f9f9f9; /* optional */
+   position: relative;
 }
 
 .eye-img {
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   object-fit: cover;
+ 
 }
-.eye-wrapper{
+.eye-wrapper {
   position: relative;
-    z-index: 10;
+  z-index: 10;
 }
-.eye-continer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+.eye-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
 
+.overlay-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 50px;
 }
-.eye{
-   position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: white;
-    z-index: 20;
-    display: flex;
-    align-items: center;    
-    justify-content: center;
-}
-.pupil{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    z-index: 40;
-}
-.rectangle{
-    width: 100%;
-    height: max-content;
-    background-color: transparent;
-    transition: transform 0.5s ease-out;
-  }
-.white{
+.eye-continer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background-color: black;
-    z-index: 30;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
-.play-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: Roboto, sans-serif;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 400;
+.eye {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pupil {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  z-index: 40;
+}
+.rectangle {
+  width: 100%;
+  height: max-content;
+  background-color: transparent;
+  transition: transform 0.5s ease-out;
+}
+.white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 30;
+}
+.play-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {

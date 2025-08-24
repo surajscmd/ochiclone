@@ -71,7 +71,7 @@
 
 @media (max-width: 480px) {
   .ready-section {
-    height: 80dvh;
+    height: 40rem;
   }
   .ready-text p {
     font-size: 2.5rem;
