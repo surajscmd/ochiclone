@@ -2,23 +2,47 @@ import React from "react";
 import "../css/featured.css";
 import feature from "../assets/feature.png";
 import featuretwo from "../assets/featuretwo.png";
+import featurethree from "../assets/Fyde.png";
+import featurefour from "../assets/soft.jpg";
+
 import { motion, useAnimation } from "motion/react";
 
-const Featured = () => {
-  const cards = [useAnimation(), useAnimation()];
+const projectsData = [
+  {
+    projectName: "All Things Go",
+    displayName: "All Things Go",
+    img: feature,
+    services: ["Pitch Deck", "Company presentation"],
+  },
+  {
+    projectName: "Salience Labs",
+    displayName: "Salience Labs",
+    img: featuretwo,
+    services: ["Copy writing", "Slide Design"],
+  },
+  {
+    projectName: "Fyde",
+    displayName: "Fyde",
+    img: featurefour,
+    services: ["Investor Pitch", "Strategy Deck" ,"Aduit"],
+  },
+  {
+    projectName: "SoftStart",
+    displayName: "SoftStart",
+    img: featurethree,
+    services: ["Sale Deck", "Brand Guidelines"],
+  },
+];
 
-  // handle hover start
+const Featured = () => {
+  const cards = projectsData.map(() => useAnimation());
+
   const handleHover = (index) => {
-    cards[index].start({
-      y: "0",
-    });
+    cards[index].start({ y: "0" });
   };
 
-  // handle hover end
   const handleHoverEnd = (index) => {
-    cards[index].start({
-      y: "100%",
-    });
+    cards[index].start({ y: "100%" });
   };
 
   return (
@@ -27,69 +51,48 @@ const Featured = () => {
         <h1 className="featured-title">Featured Projects</h1>
       </div>
       <div className="featured-list">
-        {/* First Project */}
-        <div className="featured-item">
-          <div className="featured-info">
-            <div className="dot"></div>
-            <p className="project-name">Salience Labs</p>
-          </div>
-          <motion.div
-            onMouseEnter={() => handleHover(0)}
-            onMouseLeave={() => handleHoverEnd(0)}
-            className="featured-image"
-          >
-            <h1 className="feature-name left">
-              {"Fyde".split("").map((item, index) => (
-                <motion.span
-                  initial={{ y: "100%" }}
-                  animate={cards[0]}
-                  transition={{ ease: [0.34, 1.56, 0.64, 1], delay:index * 0.06 }}
-                  className="feature-span"
-                  key={index}
-                >
-                  {item}
-                </motion.span>
+        {projectsData.map((project, index) => (
+          <div className="featured-item" key={index}>
+            <div className="featured-info">
+              <div className="dot"></div>
+              <p className="project-name">{project.projectName}</p>
+            </div>
+            <motion.div
+              onMouseEnter={() => handleHover(index)}
+              onMouseLeave={() => handleHoverEnd(index)}
+              className="featured-image"
+            >
+              <h1
+                className={`feature-name ${
+                  index % 2 === 0 ? "left" : "right"
+                }`}
+              >
+                {project.displayName.split("").map((item, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ y: "100%" }}
+                    animate={cards[index]}
+                    transition={{
+                      ease: [0.34, 1.56, 0.64, 1],
+                      delay: i * 0.06,
+                    }}
+                    className="feature-span"
+                  >
+                    {item}
+                  </motion.span>
+                ))}
+              </h1>
+              <img src={project.img} alt={`${project.projectName} project`} />
+            </motion.div>
+            <div className="service-tags">
+              {project.services.map((service, i) => (
+                <p className="service-tag" key={i}>
+                  {service}
+                </p>
               ))}
-            </h1>
-            <img src={feature} alt="Salience Labs project" />
-          </motion.div>
-          <div className="service-tags">
-            <p className="service-tag">Pitch Deck</p>
-            <p className="service-tag">Company presentation</p>
+            </div>
           </div>
-        </div>
-
-        {/* Second Project */}
-        <div className="featured-item">
-          <div className="featured-info">
-            <div className="dot"></div>
-            <p className="project-name">Salience Labs</p>
-          </div>
-          <motion.div
-            onMouseEnter={() => handleHover(1)}
-            onMouseLeave={() => handleHoverEnd(1)}
-            className="featured-image"
-          >
-            <h1 className="feature-name right">
-              {"Salience Labs".split("").map((item, index) => (
-                <motion.span
-                  initial={{ y: "100%" }}
-                  animate={cards[1]}
-                  transition={{ ease: [0.34, 1.56, 0.64, 1], delay:index * 0.06 }}
-                  className="feature-span"
-                  key={index}
-                >
-                  {item}
-                </motion.span>
-              ))}
-            </h1>
-            <img src={featuretwo} alt="Salience Labs project 2" />
-          </motion.div>
-          <div className="service-tags">
-            <p className="service-tag">Copy writing</p>
-            <p className="service-tag">Slide Design</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 .hero {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100dvw;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 
 .work-img {
   width: 100%;
-  max-width: 400px;  
+  max-width: 400px;
   object-fit: cover;
 }
 
@@ -63,7 +63,7 @@
   flex-wrap: wrap;
   border-top: 1px solid #d2d2d2;
   padding: 1rem 3rem;
- margin-bottom: 3rem;
+  margin-bottom: 3rem;
   width: 100%;
 }
 .hero-buttons {
@@ -93,9 +93,9 @@
   padding: 0.5rem;
 }
 .hero-subtext {
-  word-wrap: break-word;   
-  overflow-wrap: break-word; 
-  word-break: break-word; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
   max-width: 600px;
 }
 
@@ -115,7 +115,6 @@
   .hero-content {
     gap: 2rem;
     padding: 1rem 1rem;
-
   }
   .hero-heading {
     padding: 3rem 1rem;
@@ -127,17 +126,19 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 4rem 0;
+    min-height: 100vh;
+    width: 100dvw;
   }
-.work-item {
-  position: absolute;
-  right: 0;
-  top: 15%;
-}
+  .work-item {
+    position: absolute;
+    right: 0;
+    top: 15%;
+  }
 
-.work-img {
-  width: 40px;
-  object-fit: cover;
-}
+  .work-img {
+    width: 40px;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 868px) and (min-width: 481px) {
@@ -149,8 +150,8 @@
     padding: 4rem 0;
   }
   .hero-title {
-    font-size: 3.6rem; 
-    letter-spacing: -3px; 
+    font-size: 3.6rem;
+    letter-spacing: -3px;
   }
   .hero-img {
     width: 5rem;
@@ -159,11 +160,10 @@
   }
   .hero-heading {
     padding: 8rem 2rem;
-    text-align: start; 
-
+    text-align: start;
   }
-   .hero-content {
+  .hero-content {
     gap: 2rem;
-    padding: 1rem 1rem;   
+    padding: 1rem 1rem;
   }
 }

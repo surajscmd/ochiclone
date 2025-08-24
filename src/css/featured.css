@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0.7rem ;
+  padding: 1.5rem 0.7rem;
 }
 .dot {
   width: 12px;
@@ -72,6 +72,10 @@
   width: 700px;
   border-radius: 12px;
 }
+.featured-image img:hover{
+  filter: brightness(50%);
+  transition: all 0.3s ease-in-out;
+}
 .service-tags {
   display: flex;
   gap: 12px;
@@ -85,9 +89,34 @@
   font-weight: 400;
   border:2px solid #686868;
   color:#434343;
+  text-transform: uppercase;
 }
 
+/* Mobile: push both to center */
+@media (max-width: 1024px) {
+  .right,
+  .left {
+    left: 50%; /* move both to horizontal center */
+    transform: translate(-50%, -50%); /* center exactly */
+  }
+}
 
+/* Tablet */
+@media (max-width: 868px) {
+  .feature-name {
+    font-size: 3rem;
+    letter-spacing: -1.5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .feature-name {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    padding: 0.3rem 0.5rem;
+  }
+}
 
 
 
