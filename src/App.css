@@ -1,0 +1,123 @@
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;   /* prevent horizontal scroll */
+  position: relative;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;   /* hides scrollbar */
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1.8px;   
+  text-underline-offset: 4px;       
+}
+
+
+/* btn */
+
+.help-button{
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1.4rem 1.3rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* featuire title */
+.featured-header{
+    border-bottom:2px solid #21212148;
+    margin-bottom: 2rem;
+}
+
+.featured-title{
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #212121;
+  padding: 3rem 4rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .featured-title{
+    padding: 2rem 1rem;
+  }
+}
+
+/* nav bar */
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+}
+/* Container for content */
+.navbar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+/* Logo */
+.navbar-logo {
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Tagline */
+.navbar-tagline {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: rgb(85, 85, 85);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+  .navbar-tagline {
+    font-size: 0.7rem;
+  }
+  .navbar-logo {
+    height: 27px;
+  }
+}
+.sticky-stack {
+  position: relative;
+   display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-item {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.topminus{
+  top: -7rem;
+
+}

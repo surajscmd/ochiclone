@@ -1,0 +1,86 @@
+.cards-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0rem 4rem;
+  padding-bottom: 9rem;
+  background-color: #f1f1f1;
+  flex-wrap: wrap;
+}
+/* Big card takes 2/3 width */
+.card-one {
+  background-color: #004d43;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+/* Twins row layout */
+.card-twins {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-width: 400px;
+
+}
+/* Each twin card */
+.card {
+  background-color: #212121;
+  border-radius: 12px;
+  flex: 1;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.card-logo {
+  max-width: 120px;
+  height: auto;
+}
+.card-year {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  color: #b3d663;
+  border: 1px solid #b3d663;
+  padding: 7px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.color {
+  color: #fff;
+  border: 1px solid #fff;
+}
+@media (max-width: 450px) {
+  .cards-section {
+  padding: 20px 2rem;
+  height: auto;
+  }
+  .card-one {
+     min-width: 300px;
+  }
+  .card-twins {
+    flex-direction: column;
+    gap: 10px;
+    height: 700px;
+    min-width: 300px;
+  }
+  .card{
+    height: 400px;
+  }
+}

@@ -1,0 +1,164 @@
+/* ✅ Client Section */
+.client-section {
+  width: 100%;
+  background-color: #F1F1F1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 7rem;
+}
+/* ✅ Client Card */
+.client-card {
+  border-radius: 12px;
+  padding: 0.1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.client-header{
+  border: none;
+  margin-bottom: 0rem;
+}
+.client-title{
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #212121;
+  padding: 2rem;
+}
+/* ✅ Client Info */
+.client-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid #c3c2c2ff;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.client-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.client-read-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #21212184;
+  transition: color 0.2s;
+}
+.client-read-btn:hover {
+  color: #000;
+}
+/* ✅ Accordion */
+.accordion-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.9rem;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.client-services {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 0.5rem ;
+}
+
+.client-review {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+  max-width: 500px;
+}
+
+.client-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.service-item {
+  border: 1px solid #c3c2c2ff;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+/* ✅ Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Tweaks */
+@media (max-width: 768px) {
+  .accordion-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .client-review {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .client-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .client-name {
+    font-size: 1rem;
+  }
+
+  .client-read-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-card {
+    padding: 1rem;
+  }
+
+
+
+  .client-name {
+    font-size: 0.95rem;
+  }
+
+  .client-read-btn {
+    align-self: flex-end;
+    font-size: 0.95rem;
+  }
+
+  .client-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

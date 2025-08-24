@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../assets/fonts/NeueMontreal-Bold.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+  font-family: 'Neue Montreal', sans-serif;
+  background:  #f1f1f1;
+  color: #212121;
+}/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
