@@ -37,7 +37,7 @@
 /* Mobile */
 @media (max-width: 600px) {
   .marquee-section {
-    height: 35dvh;
+   height: 20rem;
   }
   .marquee-text {
     padding-right: 1rem;

@@ -10,7 +10,7 @@ const Marquee = () => {
       <div className="marquee-inner">
         <motion.p initial={{x: 0}} animate={{x:"-100%"}}  transition ={{repeat: Infinity , ease: "linear", duration : 10}} className="marquee-text">WE ARE OCHI</motion.p>
         <motion.p initial={{x: 0}} animate={{x:"-100%"}}  transition ={{repeat:Infinity , ease: "linear", duration : 10}} className="marquee-text">WE ARE OCHI</motion.p>
-          <motion.p initial={{x: 0}} animate={{x:"-100%"}}  transition ={{repeat:Infinity , ease: "linear", duration : 10}} className="marquee-text">WE ARE OCHI</motion.p>
+        <motion.p initial={{x: 0}} animate={{x:"-100%"}}  transition ={{repeat:Infinity , ease: "linear", duration : 10}} className="marquee-text">WE ARE OCHI</motion.p>
       </div>
     </div>
     </section>
